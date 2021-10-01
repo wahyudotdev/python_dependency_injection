@@ -13,10 +13,10 @@ class App:
         self.lamp.turn_off()
 
 @context
-def hello():
+def start_app():
     app = App()
     app.turn_on()
     app.turn_off()
 
 if __name__ == '__main__':
-    hello()
+    start_app()
