@@ -1,5 +1,4 @@
 from serum import Context
+from electronic.lamp import Lamp
 
-from hello.hello_impl import HelloImpl
-
-context = Context(HelloImpl)
+context = Context(Lamp)

@@ -1,19 +1,22 @@
 from serum import inject
-from hello import hello
-from hello.hello import Hello
 from di import context
+from electronic.switchable import Switchable
 
 @inject
 class App:
-    hello:Hello
+    lamp:Switchable
 
-    def messages(self, msg):
-        self.hello.messages(msg)
+    def turn_on(self):
+        self.lamp.turn_on()
+    
+    def turn_off(self):
+        self.lamp.turn_off()
 
 @context
 def hello():
     app = App()
-    app.messages('Tes Dependency Injection')
+    app.turn_on()
+    app.turn_off()
 
 if __name__ == '__main__':
     hello()
